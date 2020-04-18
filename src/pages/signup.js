@@ -1,11 +1,11 @@
+import { Link, navigateTo } from 'gatsby';
 import React, { useState } from 'react';
-import Helmet from 'react-helmet'
-import { navigateTo, Link } from 'gatsby'
-
-import firebase from '../lib/firebase'
+import Helmet from 'react-helmet';
+import firebase from '../../firebase';
 import Layout from '../components/Layout';
-import { Error } from '../components/Messages'
-import { inputChange } from '../lib/events'
+import { Error } from '../components/Messages';
+import { inputChange } from '../lib/events';
+
 
 const SignUp = () => {
 
@@ -20,8 +20,10 @@ const SignUp = () => {
     inputChange(e, setSignUpForm, setError);
   }
 
-  const signUp = () => {
+  const signUp = (e) => {
+    e.preventDefault()
     setError('')
+    
     const { password, confirm_password } = signUpForm
 
     if (password.length < 6 && password === confirm_password) {
@@ -45,36 +47,38 @@ const SignUp = () => {
       </Helmet>
       <div className='bg-grey-lighter min-h-screen flex flex-col'>
         <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
-          <div className='bg-white px-6 py-8 rounded shadow-md text-black w-full'>
-            <h1 className='mb-8 text-3xl text-center'>Sign up</h1>
-            <input
-              type='text'
-              className='block border border-grey-light w-full p-3 rounded mb-4'
-              name='email'
-              value={signUpForm.email}
-              onChange={onChange}
-              placeholder='Email' />
-            <input
-              type='password'
-              className='block border border-grey-light w-full p-3 rounded mb-4'
-              name='password'
-              value={signUpForm.password}
-              onChange={onChange}
-              placeholder='Password' />
-            <input
-              type='password'
-              className='block border border-grey-light w-full p-3 rounded mb-4 '
-              name='confirm_password'
-              value={signUpForm.confirm_password}
-              onChange={onChange}
-              placeholder='Confirm Password' />
+          <div className='bg-white px-6 py-8 bg-gray-900 border border-gray-800 rounded shadow p-4 w-full'>
+            <h1 className='mb-8 text-3xl text-white text-center'>Sign up</h1>
+            <form method="post" onSubmit={signUp}>
+              <input
+                type='text'
+                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                name='email'
+                value={signUpForm.email}
+                onChange={onChange}
+                placeholder='Email' />
+              <input
+                type='password'
+                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                name='password'
+                value={signUpForm.password}
+                onChange={onChange}
+                placeholder='Password' />
+              <input
+                type='password'
+                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                name='confirm_password'
+                value={signUpForm.confirm_password}
+                onChange={onChange}
+                placeholder='Confirm Password' />
 
-            { error && <Error message={error} />}              
+              { error && <Error message={error} />}              
 
-            <button
-              onClick={signUp}
-              className='w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-500 focus:outline-none my-1'
-            >Create Account</button>
+              <button
+                type="submit"
+                className='w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-500 focus:outline-none my-1'
+              >Create Account</button>
+            </form>
             <div className='text-center text-sm text-grey-dark mt-4'>
               By signing up, you agree to the <a className='no-underline border-b border-grey-dark text-grey-dark' href='#'>
                 Terms of Service 

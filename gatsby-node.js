@@ -1,5 +1,5 @@
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
+const path = require('path')
+
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 
@@ -8,8 +8,15 @@ exports.onCreatePage = async ({ page, actions }) => {
     // page.matchPath is a special key that's used for matching pages
     // with corresponding routes only on the client.
     page.matchPath = "/admin/*"
-
+    
     // Update the page.
-    createPage(page)
+    return createPage(page)
+  }
+
+  if (page.path.match(/^\/job/)) {
+    page.matchPath = "/job/*"
+    page.path = "/job/"
+    page.component = path.resolve('src/pages/job.js')
+    return createPage(page)
   }
 }

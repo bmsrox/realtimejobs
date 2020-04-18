@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from '../Header'
-import Footer from '../Footer'
-import { AuthProvider } from '../../lib/AuthContext'
-
+import { AuthProvider } from '../../lib/AuthContext';
+import Footer from '../Footer';
+import Header from '../Header';
 import './style.css';
+
 
 const Layout = ({ children, admin=false }) => {
   return (
     <AuthProvider>
-      <div className="font-sans bg-white flex flex-col min-h-screen w-full">
+      <div className="bg-dark text-gray-600 work-sans leading-normal text-base tracking-normal">
         <div>
           <Header admin={admin}/>
             { children }          
