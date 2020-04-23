@@ -13,27 +13,27 @@ const Menu = ({ signOut, username }) => {
           </g>
         </svg>
       </button>
-      <ul className="dropdown-content bg-gray-900 absolute hidden text-gray-100">
+      <ul className="dropdown-content bg-gray-600 absolute hidden text-gray-800">
         <li>
           <Link
             to='/admin'
-            className="hover:bg-gray-800 py-2 px-4 block whitespace-no-wrap">
+            className="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
             Home
             </Link>
         </li>
         <li>
           <Link
             to='/admin/password'
-            className="hover:bg-gray-800 py-2 px-4 block whitespace-no-wrap">
+            className="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
             Change Password
           </Link>
         </li>
         <li>
-          <hr className="border-t mx-2 border-gray-400" />
+          <hr className="border-t mx-2 border-gray-200" />
         </li>
         <li>
           <a
-            className="hover:bg-gray-800 py-2 px-4 block whitespace-no-wrap"
+            className="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
             onClick={signOut}>
             Sign Out
           </a>

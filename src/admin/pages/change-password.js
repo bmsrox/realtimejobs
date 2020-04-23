@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import firebase from '../../../firebase';
 import { Error, Success } from '../../components/Messages';
+import PageContainer from '../../components/PageContainer';
 import { useAuth } from '../../lib/AuthContext';
 import { inputChange } from '../../lib/events';
 
@@ -56,35 +57,31 @@ const ChangePassword = () => {
         <title>Change Password</title>
       </Helmet>
 
-      <div class="container mx-auto py-6">
-        <section className="w-full mx-auto bg-nordic-gray-light flex pt-16 md:pt-0 md:items-center h-24">
-          <div className="container mx-auto">
-            <h1 className="text-white text-3xl font-bold my-4 text-center"> Change Password </h1>
-          </div>
-        </section>
-        <section class="w-full flex flex-col items-center my-4 px-3 bg-gray-900 border border-gray-800 rounded shadow p-4">
-          <div className='max-w-sm items-center justify-center px-2 py-4'>
+      <PageContainer>
+      <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
+          <div className='bg-white px-6 py-8 text-white w-full border rounded shadow p-4'>
+            <h1 className='mb-8 text-3xl text-gray-800 text-center'>Change Password</h1>
             <form method="post" onSubmit={changePassword}>
               {success && <Success message="Your password has been changed." />}
 
               {!success && <>
                 <input
                   type='password'                  
-                  className='bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                  className='mb-4 block text-gray-600 transition border focus:outline-none focus:border-gray-600 rounded p-4 w-full'
                   name='currentPassword'
                   value={changePasswordForm.currentPassword}
                   onChange={onChange}
                   placeholder='Current Password' />
                 <input
                   type='password'
-                  className='bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                  className='mb-4 block text-gray-600 transition border focus:outline-none focus:border-gray-600 rounded p-4 w-full'
                   name='password'
                   value={changePasswordForm.password}
                   onChange={onChange}
                   placeholder='Password' />
                 <input
                   type='password'
-                  className='bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                  className='mb-4 block text-gray-600 transition border focus:outline-none focus:border-gray-600 rounded p-4 w-full'
                   name='confirm_password'
                   value={changePasswordForm.confirm_password}
                   onChange={onChange}
@@ -100,8 +97,8 @@ const ChangePassword = () => {
               }
             </form>
           </div>
-        </section>
       </div>
+      </PageContainer>
     </>
   )
 };

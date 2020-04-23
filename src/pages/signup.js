@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import firebase from '../../firebase';
 import Layout from '../components/Layout';
 import { Error } from '../components/Messages';
+import PageContainer from '../components/PageContainer';
 import { inputChange } from '../lib/events';
 
 
@@ -45,28 +46,29 @@ const SignUp = () => {
       <Helmet>
         <title>Sign Up</title>
       </Helmet>
-      <div className='bg-grey-lighter min-h-screen flex flex-col'>
-        <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
-          <div className='bg-white px-6 py-8 bg-gray-900 border border-gray-800 rounded shadow p-4 w-full'>
-            <h1 className='mb-8 text-3xl text-white text-center'>Sign up</h1>
+
+      <PageContainer>
+      <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
+          <div className='bg-white px-6 py-8 border  rounded shadow p-4 w-full'>
+            <h1 className='mb-8 text-3xl text-gray-800 text-center'>Sign up</h1>
             <form method="post" onSubmit={signUp}>
               <input
                 type='text'
-                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                className='w-full mb-4 block text-gray-600 transition border  focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
                 name='email'
                 value={signUpForm.email}
                 onChange={onChange}
                 placeholder='Email' />
               <input
                 type='password'
-                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                className='w-full mb-4 block text-gray-600 transition border  focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
                 name='password'
                 value={signUpForm.password}
                 onChange={onChange}
                 placeholder='Password' />
               <input
                 type='password'
-                className='w-full bg-gray-900 mb-4 block text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
+                className='w-full mb-4 block text-gray-600 transition border  focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal'
                 name='confirm_password'
                 value={signUpForm.confirm_password}
                 onChange={onChange}
@@ -95,7 +97,7 @@ const SignUp = () => {
             </Link>.
           </div>
         </div>
-      </div>
+      </PageContainer>
     </Layout>
   )
 };

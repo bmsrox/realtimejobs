@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import JobItem from '../JobItem';
+import PageContainer from '../PageContainer';
+import PageHeader from '../PageHeader';
 
 const Home = () => {
 
@@ -10,20 +12,22 @@ const Home = () => {
         <title>Realtime Jobs</title>
       </Helmet>
 
-      <section className="w-full mx-auto bg-nordic-gray-light flex pt-16 md:pt-0 md:items-center h-64">
-        <div className="container mx-auto">
-          <h1 className="text-white text-2xl my-4 text-center">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
-          <div className="relative text-center">
-            <input type="search" placeholder="Search" className="bg-gray-900 text-3xl text-gray-400 transition border border-gray-800 focus:outline-none focus:border-gray-600 rounded pb-4 pt-5 pl-4 pr-4 appearance-none leading-normal" />
+      <PageHeader>
+          <a className="font-bold text-gray-800 uppercase text-5xl" href="#">
+            Minimal Blog
+          </a>
+          <div className="flex flex-col items-center px-3 w-full text-center">
+            <input type="text" placeholder="Search" className="w-full md:w-3/5 bg-white text-3xl text-gray-600 transition border border-gray-400 focus:outline-none focus:border-gray-600 rounded p-2 mb:p-4" />
           </div>
-        </div>      
-      </section>
+      </PageHeader>
 
-      <section className="w-full mx-auto bg-nordic-gray-light flex pt-16 md:pt-0 md:items-center py-2">
-        <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+      <PageContainer>
+        <section className="w-full px-3">
           <JobItem />
-        </div>
-      </section>
+          <JobItem />
+          <JobItem />
+        </section>
+      </PageContainer>
     </>
   )
 };

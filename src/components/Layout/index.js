@@ -8,12 +8,10 @@ import './style.css';
 const Layout = ({ children, admin=false }) => {
   return (
     <AuthProvider>
-      <div className="bg-dark text-gray-600 work-sans leading-normal text-base tracking-normal">
-        <div>
+      <div className="bg-gray-300">
           <Header admin={admin}/>
             { children }          
           <Footer />
-        </div>
       </div>
     </AuthProvider>
   )
