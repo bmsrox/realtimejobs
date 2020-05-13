@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import firebase from '../../../firebase';
 import { Error, Success } from '../../components/Messages';
@@ -6,16 +6,15 @@ import PageContainer from '../../components/PageContainer';
 import { useAuth } from '../../lib/AuthContext';
 import { inputChange } from '../../lib/events';
 
-
 const ChangePassword = () => {
 
   const auth = useAuth()
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
+  const [error, setError] = React.useState('')
+  const [success, setSuccess] = React.useState(false)
   const [
     changePasswordForm,
     setChangePasswordForm
-  ] = useState({
+  ] = React.useState({
     currentPassword: '',
     password: '',
     confirm_password: ''

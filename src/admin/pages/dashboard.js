@@ -3,9 +3,25 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PageContainer from '../../components/PageContainer';
 import PageHeader from '../../components/PageHeader';
+import { useAuth } from '../../lib/AuthContext';
+import { findJobByAuthorId } from '../../service/jobs';
 import JobItem from '../components/JobItem';
 
 const Dashboard = () => {
+
+  const auth = useAuth()
+  const [jobs, setJobs] = React.useState([])
+
+  React.useEffect(()=> {
+    async function loadJobs() {
+      setJobs(await findJobByAuthorId(auth.uid))
+    }
+
+    if (auth.isAuthReady) {
+      loadJobs()  
+    }
+  }, [auth, jobs])
+
   return (
     <>
       <Helmet>
@@ -18,7 +34,7 @@ const Dashboard = () => {
       </PageHeader>      
       <PageContainer>
         <section className="w-full flex flex-col items-center px-3">
-          <JobItem />
+          { jobs.map(job => <JobItem key={job.id} job={job} />) }
         </section>
       </PageContainer>
     </>
