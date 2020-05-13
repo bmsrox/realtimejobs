@@ -1,7 +1,7 @@
 REALTIME JOBS
 =============
 
-This app has been made with gatsby, firebase auth, and firestore to practice development using this tools
+This app has been made with gatsby, firebase auth, and firestore to practice development using this tools.
 
 ### Features
 
@@ -22,6 +22,10 @@ This app has been made with gatsby, firebase auth, and firestore to practice dev
   - Firebase Auth
   - Firestore
   - Gatsby
+
+### Concepts
+
+  - SAAS (Software as a Service)
 
 ### Run project
 
