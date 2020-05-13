@@ -1,13 +1,12 @@
-export const inputChange = (event, setstate, seterror) => {
+const defaultStateError = () => {}
+
+export const inputChange = (event, setstate, seterror=defaultStateError) => {
   try {
     const value = event.target.value
     const field = event.target.name
 
-    setstate(oldstate => ({...oldstate, [field]: value}))
-
-    if (typeof seterror === 'function') {
-      seterror('')
-    }
+    setstate(state => ({...state, [field]: value}))
+    seterror('')
   } catch (error) {
     console.error(error)
   }

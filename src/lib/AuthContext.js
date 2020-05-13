@@ -1,11 +1,11 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React from 'react'
 import firebase from '../../firebase'
 
-export const AuthContext = createContext()
+export const AuthContext = React.createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState({ isAuth: false, isAuthReady: false })
-  useEffect(() => {
+  const [auth, setAuth] = React.useState({ isAuth: false, isAuthReady: false })
+  React.useEffect(() => {
     firebase
       .auth()
       .onAuthStateChanged(user => {
@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         } else {
           setAuth({
             isAuth: false,
-            isAuthReady: true
+            isAuthReady: false
           })
         }
     });
@@ -46,4 +46,4 @@ export const AuthProvider = ({ children }) => {
 }
 
 //custom hook
-export const useAuth = () => useContext(AuthContext)
+export const useAuth = () => React.useContext(AuthContext)
