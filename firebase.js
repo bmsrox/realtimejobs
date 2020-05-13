@@ -1,15 +1,15 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-import 'firebase/auth'
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWJn7ea3ZF4qPQspZm8DxXYkc3H-NKE5s",
-  authDomain: "gatsby-template-a3801.firebaseapp.com",
-  databaseURL: "https://gatsby-template-a3801.firebaseio.com",
-  projectId: "gatsby-template-a3801",
-  storageBucket: "gatsby-template-a3801.appspot.com",
-  messagingSenderId: "1006846599264",
-  appId: "1:1006846599264:web:3e01c6901c198292d2a305"
+  apiKey: "AIzaSyAjbO8QfiS-EBna4nADWq7yrdIXTzBqX68",
+  authDomain: "realtimejobs-579e7.firebaseapp.com",
+  databaseURL: "https://realtimejobs-579e7.firebaseio.com",
+  projectId: "realtimejobs-579e7",
+  storageBucket: "realtimejobs-579e7.appspot.com",
+  messagingSenderId: "395324978010",
+  appId: "1:395324978010:web:ba564cbe89448701c33963"
 };
 
 firebase.initializeApp(firebaseConfig)
