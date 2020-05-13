@@ -1,5 +1,5 @@
 import { Link, navigateTo } from 'gatsby';
-import React, { useState } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import firebase from '../../firebase';
 import Layout from '../components/Layout';
@@ -9,8 +9,8 @@ import { inputChange } from '../lib/events';
 
 const SignIn = () => {
 
-  const [error, setError] = useState('')
-  const [signInForm, setSignInForm] = useState({
+  const [error, setError] = React.useState('')
+  const [signInForm, setSignInForm] = React.useState({
     email: '',
     password: ''
   })

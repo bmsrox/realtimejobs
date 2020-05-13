@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import firebase from '../../firebase';
 import Layout from '../components/Layout';
@@ -9,9 +9,9 @@ import { inputChange } from '../lib/events';
 
 const ForgotPassword = () => {
 
-  const [success, setSucces] = useState(false)
-  const [error, setError] = useState('')
-  const [forgetForm, setForgetForm] = useState({
+  const [success, setSucces] = React.useState(false)
+  const [error, setError] = React.useState('')
+  const [forgetForm, setForgetForm] = React.useState({
     email: ''
   })
 
