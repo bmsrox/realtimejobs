@@ -1,7 +1,7 @@
-Gatsby Template
-===============
+REALTIME JOBS
+=============
 
-This template has been made with gatsby and firebase auth.
+This app has been made with gatsby, firebase auth, and firestore to practice development using this tools
 
 ### Features
 
@@ -10,12 +10,17 @@ This template has been made with gatsby and firebase auth.
 -  Forget Password
 -  Change Password when signed in
 -  Email Verification after signed up
+-  Create Job
+-  Read Job
+-  Update Job
+-  Delete Job
 
 ### Tecs
 
   - ReactJS
   - TailwindCSS
   - Firebase Auth
+  - Firestore
   - Gatsby
 
 ### Run project
