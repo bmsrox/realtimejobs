@@ -1,7 +1,7 @@
 REALTIME JOBS
 =============
 
-This app has been made with gatsby, firebase auth, and firestore to practice development using this tools.
+This app has been made with gatsby, firebase auth, firestore, and SaaS (Software as a Service) to practice development using this tools.
 
 ### Features
 
@@ -23,15 +23,11 @@ This app has been made with gatsby, firebase auth, and firestore to practice dev
   - Firestore
   - Gatsby
 
-### Concepts
-
-  - SAAS (Software as a Service)
-
 ### Run project
 
     yarn install && yarn dev
 
 ### Hosted by Firebase at
 
-    https://gatsby-template-a3801.firebaseapp.com/
+    https://realtimejobs-579e7.web.app
 
